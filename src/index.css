@@ -527,7 +527,7 @@ p:last-child {
 .mobile-menu-drawer {
   position: fixed;
   top: 0;
-  right: -320px;
+  right: 0;
   width: 320px;
   height: 100vh;
   background: #FFFFFF;
@@ -537,11 +537,12 @@ p:last-child {
   flex-direction: column;
   justify-content: space-between;
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
-  transition: right var(--transition-base);
+  transform: translateX(105%);
+  transition: transform var(--transition-base);
 }
 
 .mobile-overlay.is-active .mobile-menu-drawer {
-  right: 0;
+  transform: translateX(0);
 }
 
 .mobile-nav-list {
@@ -1938,6 +1939,395 @@ p:last-child {
   color: #FFFFFF;
   border-color: var(--violet-500);
   transform: translateY(-3px);
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 72px;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .header,
+  .header.is-scrolled {
+    padding: 0.7rem 0;
+  }
+
+  .header-inner {
+    gap: 0.75rem;
+  }
+
+  .brand-logo {
+    gap: 0.55rem;
+    font-size: 1.2rem;
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  .brand-icon-symbol {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    flex: 0 0 34px;
+  }
+
+  .brand-title-sub {
+    font-size: 0.56rem;
+    letter-spacing: 0.1em;
+  }
+
+  .header-actions {
+    gap: 0;
+    flex-shrink: 0;
+  }
+
+  .header-actions > .btn {
+    display: none;
+  }
+
+  .nav-toggler {
+    display: flex;
+    width: 40px;
+    height: 40px;
+  }
+
+  .mobile-menu-drawer {
+    width: min(86vw, 320px);
+    right: 0;
+    padding: 5rem 1.25rem 1.25rem;
+  }
+
+  .hero-section {
+    padding-top: 7.25rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-badge-pill {
+    margin-bottom: 1.35rem;
+    padding: 0.42rem 0.9rem;
+    font-size: 0.78rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.05rem, 9vw, 2.55rem);
+    line-height: 1.08;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-title br {
+    display: none;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 1.8rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0.75rem;
+    margin: 0 auto 2.25rem;
+    max-width: 360px;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .hero-quick-meta {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 1rem;
+    text-align: left;
+  }
+
+  .meta-item {
+    width: 100%;
+    min-width: 0;
+    font-size: 0.84rem;
+  }
+
+  .meta-item a {
+    overflow-wrap: anywhere;
+  }
+
+  .trust-strip {
+    margin-top: 3rem;
+  }
+
+  .trust-strip-label {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .trust-badges-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .trust-badge-pill {
+    min-width: 0;
+    padding: 0.7rem;
+    border-radius: var(--radius-md);
+    text-align: left;
+  }
+
+  .trust-pill-text,
+  .trust-pill-tag {
+    overflow-wrap: anywhere;
+  }
+
+  .section-header {
+    margin-bottom: 2.25rem;
+  }
+
+  .section-desc {
+    font-size: 1rem;
+  }
+
+  .metrics-section {
+    padding: 3.5rem 0;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  .metric-card {
+    padding: 1.35rem 0.65rem;
+    border-radius: var(--radius-md);
+  }
+
+  .metric-card-number {
+    font-size: 2rem;
+  }
+
+  .metric-card-title {
+    font-size: 0.9rem;
+  }
+
+  .metric-card-desc {
+    font-size: 0.74rem;
+  }
+
+  .domain-card,
+  .timeline-card,
+  .skill-category-card,
+  .education-card {
+    padding: 1.35rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .experience-layout {
+    gap: 1.25rem;
+    min-width: 0;
+  }
+
+  .experience-sidebar {
+    padding: 1.25rem;
+    border-radius: var(--radius-lg);
+    min-width: 0;
+  }
+
+  .exp-filter-tabs {
+    margin: 1rem 0;
+  }
+
+  .exp-tab-btn {
+    flex: 0 0 auto;
+    padding: 0.7rem 0.9rem;
+  }
+
+  .timeline-feed {
+    gap: 1.25rem;
+    min-width: 0;
+  }
+
+  .timeline-card,
+  .timeline-role-meta,
+  .timeline-sub-project {
+    min-width: 0;
+  }
+
+  .timeline-header {
+    gap: 0.75rem;
+  }
+
+  .timeline-sub-project,
+  .project-highlights-box {
+    padding: 1rem;
+  }
+
+  .timeline-bullet {
+    font-size: 0.9rem;
+    gap: 0.55rem;
+  }
+
+  .projects-filter-bar {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    scrollbar-width: none;
+  }
+
+  .projects-filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .project-filter-btn {
+    flex: 0 0 auto;
+  }
+
+  .projects-grid {
+    gap: 1.25rem;
+  }
+
+  .project-card {
+    border-radius: var(--radius-lg);
+  }
+
+  .project-card-header,
+  .project-card-body,
+  .project-card-footer {
+    padding: 1.25rem;
+  }
+
+  .project-card-header {
+    flex-direction: column;
+  }
+
+  .project-card-title {
+    font-size: 1.2rem;
+  }
+
+  .spotlight-banner {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .spotlight-inner {
+    gap: 1.5rem;
+  }
+
+  .spotlight-content h3 {
+    font-size: 1.55rem;
+  }
+
+  .spotlight-card-preview {
+    padding: 1.25rem;
+  }
+
+  .skill-category-card {
+    padding: 1.35rem;
+  }
+
+  .education-card {
+    gap: 1.25rem;
+  }
+
+  .edu-icon-badge {
+    width: 60px;
+    height: 60px;
+  }
+
+  .edu-meta-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .cta-section {
+    padding: 2rem 0 4rem;
+  }
+
+  .cta-box {
+    padding: 2.5rem 1.25rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .cta-title {
+    font-size: 2rem;
+  }
+
+  .cta-desc {
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .contact-pill-value {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-buttons .btn {
+    width: 100%;
+  }
+
+  .footer {
+    padding: 3.5rem 0 2rem;
+  }
+
+  .footer-top {
+    margin-bottom: 2.5rem;
+  }
+
+  .modal-backdrop {
+    padding: 0.75rem;
+  }
+
+  .modal-container {
+    border-radius: var(--radius-lg);
+    max-height: 94vh;
+  }
+
+  .modal-header,
+  .modal-body {
+    padding: 1.25rem;
+  }
+
+  .toast-notification {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    justify-content: center;
+  }
+
+  .back-to-top-btn {
+    left: 1rem;
+    bottom: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand-title-sub {
+    display: none;
+  }
+
+  .hero-title {
+    font-size: 1.9rem;
+  }
+
+  .trust-badges-grid,
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Custom Scrollbars */
