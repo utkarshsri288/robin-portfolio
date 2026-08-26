@@ -21,7 +21,12 @@ export default function Hero({ onOpenResume, onNavClick }) {
 
         {/* Subtitle */}
         <p className="hero-description">
-          Consultant with <strong>3+ years of specialized experience</strong> in Independent Validation Agency (IVA) projects, government consulting, and high-stakes IT RFPs/EOIs. Partnering with global institutions including the <strong>World Bank, UNICEF, UNICC, AFDB</strong> and core GOI ministries (<strong>MHA, MoHUA, MOEFCC</strong>).
+          <span className="hero-description-desktop">
+            Consultant with <strong>3+ years of specialized experience</strong> in Independent Validation Agency (IVA) projects, government consulting, and high-stakes IT RFPs/EOIs. Partnering with global institutions including the <strong>World Bank, UNICEF, UNICC, AFDB</strong> and core GOI ministries (<strong>MHA, MoHUA, MOEFCC</strong>).
+          </span>
+          <span className="hero-description-mobile">
+            <strong>3+ years</strong> in IVA, government advisory and IT RFPs—supporting the <strong>World Bank, UNICEF, UNICC, AFDB</strong> and Government of India.
+          </span>
         </p>
 
         {/* CTA Actions */}
